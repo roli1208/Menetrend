@@ -2,6 +2,7 @@ package com.example.menetrend;
 
 
 public class Menetrend {
+    private String id;
     private String indVaros;
     private String indIdo;
     private String erkVaros;
@@ -20,6 +21,10 @@ public class Menetrend {
 
     public String getIndIdo() {
         return indIdo;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getErkVaros() {

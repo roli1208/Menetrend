@@ -11,16 +11,23 @@ import android.view.View;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 public class ListActivity extends AppCompatActivity {
 
     FirebaseFirestore fstore;
     RecyclerView rview;
+    private ArrayList<Menetrend> mItemsData;
+    private CollectionReference mItems;
+
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
@@ -42,6 +49,16 @@ public class ListActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+    private void queryData() {
+        mItemsData.clear();
+        mItems.limit(10).get().addOnSuccessListener(queryDocumentSnapshots -> {
+            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                Menetrend item = document.toObject(Menetrend.class);
+                item.setId(document.getId());
+                mItemsData.add(item);
+            }
+        });
     }
 
     public void addAct(View view) {
