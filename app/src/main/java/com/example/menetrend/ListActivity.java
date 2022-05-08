@@ -36,7 +36,7 @@ public class ListActivity extends AppCompatActivity {
                                 Log.println(Log.ASSERT,"d", document.getId() + " => " + document.getData());
                             }
                         } else {
-                            Log.println(Log.ASSERT,"d", "sikertelen");
+                            Log.println(Log.ASSERT,"d", "sikertelen!");
 
                         }
                     }
