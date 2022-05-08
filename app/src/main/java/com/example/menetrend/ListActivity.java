@@ -25,6 +25,7 @@ public class ListActivity extends AppCompatActivity {
     RecyclerView rview;
     private ArrayList<Menetrend> mItemsData;
     private CollectionReference mItems;
+    private NotificationHandler mNotificationHandler;
 
     @Override
 
@@ -64,5 +65,12 @@ public class ListActivity extends AppCompatActivity {
     public void addAct(View view) {
         Intent intent = new Intent(this,AddActivity.class);
         startActivity(intent);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mNotificationHandler = new NotificationHandler(this);
+        mNotificationHandler.send("Várunk vissza!");
+
     }
 }
