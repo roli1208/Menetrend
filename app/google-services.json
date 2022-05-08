@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "965366069862",
+    "project_id": "szegedi-menetrend-9921d",
+    "storage_bucket": "szegedi-menetrend-9921d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965366069862:android:ff34f9eb3d7f1f5c890ba7",
+        "android_client_info": {
+          "package_name": "com.example.menetrend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965366069862-8ibqp65kaqlulkkplbkb14o604i5udj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.menetrend",
+            "certificate_hash": "2ae5fcfb4071db99d631fbdf67844dbcd0004d6c"
+          }
+        },
+        {
+          "client_id": "965366069862-6iml9tka639qop10osnqvqaiqdmtrcpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtRTkflq5_iOaBYl8tqQg0sRgejzSAW-Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965366069862-6iml9tka639qop10osnqvqaiqdmtrcpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
