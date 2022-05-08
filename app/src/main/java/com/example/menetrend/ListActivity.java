@@ -23,8 +23,6 @@ public class ListActivity extends AppCompatActivity {
 
     FirebaseFirestore fstore;
     RecyclerView rview;
-    private ArrayList<Menetrend> mItemsData;
-    private CollectionReference mItems;
     private NotificationHandler mNotificationHandler;
 
     @Override
@@ -34,7 +32,9 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         fstore = FirebaseFirestore.getInstance();
         rview = findViewById(R.id.r_view);
-        fstore.collection("menetrend")
+
+        //Adatok listázása + limit
+        fstore.collection("menetrend").limit(2)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -50,16 +50,6 @@ public class ListActivity extends AppCompatActivity {
                     }
                 });
 
-    }
-    private void queryData() {
-        mItemsData.clear();
-        mItems.limit(10).get().addOnSuccessListener(queryDocumentSnapshots -> {
-            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
-                Menetrend item = document.toObject(Menetrend.class);
-                item.setId(document.getId());
-                mItemsData.add(item);
-            }
-        });
     }
 
     public void addAct(View view) {
